@@ -22,6 +22,7 @@ class ProcessPayment:
                 success = False
                 while count != self.MAX_CHEAP_PAYMENT_RETRY and retry > 0:
                     count += 1
+                    print(count)
                     if count == retry:
                         success = True
                     payment = CheapPaymentGateway(cc_number, card_holder, exp_date, security_code,
@@ -31,8 +32,9 @@ class ProcessPayment:
         elif amount > 500:
             count = 0
             success = False
-            while count != self.MAX_CHEAP_PAYMENT_RETRY and retry > 0:
+            while count != self.MAX_PREMIUM_PAYMENT_RETRY and retry > 0:
                 count += 1
+                print(count)
                 if count == retry:
                     success = True
                 payment = PremiumPaymentGateway(cc_number, card_holder, exp_date, security_code,
