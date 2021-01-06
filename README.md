@@ -9,4 +9,15 @@ How to use:
 - Set success to true to test successfull payment
 - Set number of retries using the retry param and set success to false for testing retrying of payment.
 
-Ex. {**kwargs, "success": false, "retry": 1} - to retry once.
+Example post data:
+```
+{
+    "CreditCardNumber": "5540455316944240",
+    "CardHolder": "Test Name",
+    "ExpirationDate": "2021-01-10 01:10",
+    "SecurityCode": "123",
+    "Amount": 501,
+    "success": false,
+    "retry": 2
+}
+```
